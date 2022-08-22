@@ -1,0 +1,33 @@
+from machine import Pin as pin
+from ultimate import sleep as pause, sleep_ms pausem, sleep_us as pauseu
+ledlist=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+leds=[]
+for in ledlist:
+  leds.append (pin(i, pin.Out))
+  print (leds)
+def rigth():
+  for i in leds:
+    i.value(not i.value())
+    pausem(200)
+def left():
+  for i in reversed(leds):
+    i.value(not i.value())
+    pausem(200)
+while True:
+  rigth()
+  rigth()
+  left()
+  left()
+  rigth()
+  rigth()
+  left()
+  left()
+  rigth()
+  rigth()
+  left()
+  left()
+  rigth()
+  rigth()
+  left()
+  left()
+
