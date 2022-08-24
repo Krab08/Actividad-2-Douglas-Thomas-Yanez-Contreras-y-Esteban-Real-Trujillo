@@ -1,11 +1,11 @@
 from machine import Pin as pin
-from ultimate import sleep as pause, sleep_ms pausem, sleep_us as pauseu
+from utime import sleep as pause, sleep_ms pausem, sleep_us as pauseu
 ledlist=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 leds=[]
 for i in ledlist:
 leds.append (pin( i, pin.OUT))
 print (leds)
 while True:
-  for in ledlist:
+  for i in ledlist:
   i.value(not i value())
   pausem(350)
