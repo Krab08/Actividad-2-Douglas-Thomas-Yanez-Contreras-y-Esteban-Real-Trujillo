@@ -1,5 +1,5 @@
 from machine import Pin as pin
-from ultimate import sleep
+from ultime import sleep
 led=pin(15, pin.OUT)
 led2=pin(1, pin.OUT)
 led3=pin(10, pin.OUT)
@@ -11,7 +11,7 @@ led8=pin(7, pin.OUT)
 led9=pin(6, pin.OUT)
 led10=pin(11, pin.OUT)
 
-for in range(2):
+for i in range(2):
 led1.value(1)
 sleep(1)
 led1.value()
