@@ -1,0 +1,269 @@
+from machine import Pin as pin
+from utime import sleep, sleep_ms as pausa
+
+led1=pin(12,pin.OUT) 
+led2=pin(14,pin.OUT) 
+led3=pin(27,pin.OUT) 
+led4=pin(26,pin.OUT) 
+led5=pin(25,pin.OUT) 
+led6=pin(33,pin.OUT) 
+led7=pin(23,pin.OUT) 
+led8=pin(22,pin.OUT) 
+led9=pin(21,pin.OUT) 
+led10=pin(19,pin.OUT)
+Rob=pin(15,pin.IN)
+Lewy=pin(4,pin.IN)
+Ped=pin(16,pin.IN)
+Ri=pin(18,pin.IN)
+Mess=pin(19,pin.IN)
+pausa = 0.4
+
+todos=[led1,led2,led3,led4,led5,led6,led7,led8]
+
+def codigo1():
+    for elemento in todos:
+        elemento.value(1)
+        pausa(100)
+        elemento.value(0)
+        pausa(50)
+    for elemento in reversed(todos):
+        elemento.value(1)
+        pausa(50)
+        elemento.value(0)
+        pausa(50) 
+        
+def codigo2():
+    for i in todos:
+        for j in range (4):
+            i.value(not i.value())
+            pausa(150)
+    for i in reversed(todos):
+        for j in range (4):
+            i.value(not i.value())
+            pausa(150)
+            
+def codigo3():               
+    print_led(1,1,0,0,0,0,0,0)
+    print_led(0,0,1,1,0,0,0,0)
+    print_led(0,0,0,0,1,1,0,0)
+    print_led(0,0,0,0,0,0,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(0,0,0,0,0,0,1,1)
+    print_led(0,0,0,0,1,1,0,0)
+    print_led(0,0,1,1,0,0,0,0)
+    print_led(1,1,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(1,0,0,0,0,0,0,0)
+    print_led(0,1,0,0,0,0,0,0)
+    print_led(0,0,1,0,0,0,0,0)
+    print_led(0,0,0,1,0,0,0,0)
+    print_led(0,0,0,0,1,0,0,0)
+    print_led(0,0,0,0,0,1,0,0)
+    print_led(0,0,0,0,0,0,1,0)
+    print_led(0,0,0,0,0,0,0,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+
+def codigo3pt1():
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,0,0,0,0)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,0,0,0,0)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,0,0,0,0)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(0,0,0,0,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(0,0,0,0,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(0,0,0,0,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+
+def codigo3pt2():
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)                  
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,1,1,1,1,1,1,1)
+    print_led(0,0,0,0,0,0,0,0)
+    print_led(1,0,1,0,1,0,1,0)
+    print_led(0,1,0,1,0,1,0,1)
+    print_led(1,1,0,1,1,0,1,1)
+    print_led(0,1,1,0,1,1,0,0)
+    print_led(0,0,0,0,0,0,0,0)
+            
+def codigo4():
+    led1.value(1)
+    sleep(pausa)
+    led1.value(0)
+    sleep(pausa)
+    led2.value(1)
+    sleep(pausa)
+    led2.value(0)
+    sleep(pausa)
+    led3.value(1)
+    sleep(pausa)
+    led3.value(0)
+    sleep(pausa)
+    led4.value(1)
+    sleep(pausa)
+    led4.value(0)
+    sleep(pausa)
+    led5.value(1)
+    sleep(pausa)
+    led5.value(0)
+    sleep(pausa)
+    led6.value(1)
+    sleep(pausa)
+    led6.value(0)
+    sleep(pausa)
+    led7.value(1)
+    sleep(pausa)
+    led7.value(0)
+    sleep(pausa)
+    led8.value(1)
+    sleep(pausa)
+    led8.value(0)
+    sleep(pausa)
+    
+def print_led(a,b,c,d,e,f,g,h):
+        led1.value(a) 
+        led2.value(b)
+        led3.value(c)
+        led4.value(d)
+        led5.value(e)
+        led6.value(f)
+        led7.value(g)
+        led8.value(h)
+        sleep(pausa)
+        
+def secuencia5():
+    for i in range(1,5):
+        LedsHumildes=[led2,led7]
+        LedsArrog=[led1,led10]
+        LedsCurio=[led3,led6]
+        LedsSap=[led4,led9]
+        LedsWat=[led5,led8]
+        
+        for Hleds in LedsHumildes:
+            Hleds.value(0)
+            sleep(pausam)
+            Hleds.value(1)
+            sleep(pausa)
+            Hleds.value(0)
+            sleep(pausam)
+            
+        for Aleds in LedsArrog:
+            Aleds.value(0)
+            sleep(pausam)
+            Aleds.value(1)
+            sleep(pausa)
+            Aleds.value(0)
+            sleep(pausam)
+        
+        for Cleds in LedsCurio:
+            Cleds.value(0)
+            sleep(pausam)
+            Cleds.value(1)
+            sleep(pausa)
+            Cleds.value(0)
+            sleep(pausam)
+            
+        for Sleds in LedsSap:
+            Sleds.value(0)
+            sleep(pausam)
+            Sleds.value(1)
+            sleep(pausa)
+            Sleds.value(0)
+            sleep(pausam)
+            
+        for Wleds in LedsWat:
+            Wleds.value(0)
+            sleep(pausam)
+            Wleds.value(1)
+            sleep(pausa)
+            Wleds.value(0)
+            sleep(pausam)       
+        
+
+while True:
+    if (Rob.value() and not Lewy.value() and not Ri.value() and not Ped.value()):             
+        print("Uno")
+        codigo1()
+    if (Lewy.value() and not Ped.value() and not Rob.value() and not Ri.value()):
+        print("Dos")
+        codigo2()
+    if (Ped.value() and not Lewy.value() and not Rob.value() and not Ri.value()):
+        print("Tres")
+        codigo3()
+    if (Ri.value() and not Lewy.value() and not Rob.value() and not Ped.value()):
+        print("Cuatro")
+        codigo4()
+    if (Mess.value()):  
+        print("Aumenta")  
+        pausa = pausa - 0.1       
+    if (Mess.value() and Ri.value()):
+        print("Disminuye")
+        pausa = pausa + 0.2
+ 
+    if (Rob.value() and Lewy.value() and not Ped.value() and not Ri.value()):
+        print("Cinco")
+        codigo1()
+        codigo2()
+    if (Rob.value() and Ped.value()and not Lewy.value() and not Ri.value()):
+        print("Seis")
+        codigo1()
+        codigo3()
+    if (Rob.value() and Ri.value()and not Ped.value() and not Lewy.value()):
+        print("Siete")
+        codigo1()
+        codigo4()
+    if (Lewy.value() and Ped.value()and not Rob.value() and not Ri.value()):
+        print("Ocho")
+        codigo2()
+        codigo3()
+    if (Lewy.value() and Ri.value()and not Rob.value() and not Ped.value()):
+        print("Nueve")
+        codigo2()
+        codigo4()
+    if (Ped.value() and Ri.value()and not Lewy.value() and not amarillo.value()):
+        print("Diez")
+        codigo3()
+        codigo4()
+ #3 botones 
+    if (Rob.value() and Lewy.value() and Ped.value() and not Ri.value()):
+        print("Once")
+        codigo2_1()
+    if (Rob.value() and Ped.value() and Ri.value() and not Lewy.value()):
+        print("Doce")
+        codigo2_2()
+    if (Lewy.value() and Ped.value() and Ri.value() and not Rob.value()):
+        print("Trece")
+        codigo2_1()
+        codigo2_2()
+    if (Lewy.value() and Rob.value() and Ri.value() and not Ped.value()):
+         print("Catorce")
+         codigo2()
+         codigo2_1()
+         codigo2_2()   
+ #4 botones
+    if (Lewy.value() and Rob.value() and Ri.value() and Ped.value()):
+        print("Quince")
+        codigo1()
+        codigo2()
+        codigo3()
+        codigo4()
+        
+     if (Lewy.value() and Rob.value() and Rob.value() and Ped.value()):
+        print("Dieciseís")
+        codigo5()
